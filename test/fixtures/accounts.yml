@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  balance: 1.5
+  number: 
+  user: one
+
+two:
+  number: 1
+  balance: 1.5
+  number: 
+  user: two

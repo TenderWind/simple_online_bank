@@ -1,0 +1,21 @@
+<div class="container">
+  <nav class="navbar navbar-default">
+   <div class="container-fluid">
+     <div class="navbar-header">
+       <%= link_to 'Simple Online Bank', unauthenticated_root_path, class: 'navbar-brand' %>
+     </div><!-- /.navbar-header -->
+
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+	<% if user_signed_in? %>
+	  <li><p class="navbar-text">Здравствуйте, <%= current_user.first_name %> <%= current_user.last_name %></p></li>
+	  <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+	<% else %>
+	  <li><%= link_to 'Войти', new_user_session_path %></li>
+          <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>  
+	<% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+   </div><!--/.container-fluid -->
+  </nav>
+</div>
