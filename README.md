@@ -1,24 +1,26 @@
-# README
+Ruby: 2.3.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails: 5.0.1
 
-Things you may want to cover:
+DB: PostgreSQL 9.5.5
 
-* Ruby version
+Для настройки подключения к бд в simple_online_bank/config/database.yml
+указать:
+```
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+development:
+  <<: *default
+  database: your_db_name
+  username: your_username
+  password: your_password
+  
+test:
+  <<: *default
+  database: your_db_name
+  username: your_username
+  password: your_password
+```
